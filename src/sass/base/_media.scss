@@ -81,6 +81,29 @@
         &__title {
             font-size: 32px;
         }
+    }
+    .catalog {
+        &-item {
+            margin: 0 auto;
+            margin-bottom: 20px;
+            &__price {
+                font-size: 15px;
+            }
+            .button {
+                &_mini {
+                    width: 120px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+    .feedback {
+        &-item {
+            margin-bottom: 90px;
+            &__info {
+                font-size: 14px;
+            }
+        }
     }   
 }
 
@@ -169,4 +192,46 @@
         margin: 0 auto;
         margin-top: 36px;
     }
+    .catalog {
+        &__title {
+            font-size: 22px;
+            margin-bottom: 50px;
+        }
+        &__tab {
+            font-size: 10px;
+            width: 90px;
+        }
+        &-item {
+            &__descr {
+                font-style: 18px;
+            }
+        }
+    }
+    .feedback {
+        &__title {
+            font-size: 25px;
+        }
+        &-item {
+            display: block;
+            padding: 0 5px;
+            &__img {
+                display: block;
+                margin: 0 auto;
+            }
+            &__text {
+                margin-left: 0;
+                text-align: center;
+            }
+            &__name {
+                margin-top: 10px;
+                font-size: 17px;
+            }
+            &__merit {
+                font-size: 13px;
+            }
+            &__info {
+                font-size: 13px;
+            }
+        }
+    }  
 }
