@@ -33,6 +33,59 @@ $(document).ready(function(){
     }
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+    //Modal
+
+    //First option
+
+    // $('[data-modal=consultation]').on('click', function(){
+    //     $('.overlay').css("display","block");
+    //     $('#consultation').css("display","block");
+    // });
+
+    // $('.modal__close').on('click', function(){
+    //     $('.overlay').css("display","none");
+    //     $('#consultation').css("display","none");
+    // });
+
+    //Second option
+    // $('[data-modal=consultation]').on('click', () => {
+    //     $('.overlay,#consultation').fadeIn('slow');
+    // });
+
+    // $('.modal__close').on('click', function(){
+    //     $('.overlay,#consultation,#order,#thanks').fadeOut('slow');
+    // });
+
+    // $('.button_mini').on('click', () => {
+    //     $('.overlay,#order').fadeIn('slow');
+    // });
+
+
+    //Optimized second option
+
+    function modal(consultation,order, close) {
+        consultation.on('click', () => {
+            $('.overlay,#consultation').fadeIn('slow');
+        });
+        // order.on('click', () => {
+        //     $('.overlay,#order').fadeIn('slow');
+        // });
+        order.each(function(i){
+            $(this).on('click',() => {
+                $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+                $('.overlay, #order').fadeIn('slow');
+            });
+        });
+        close.on('click', () => {
+            $('.overlay,#consultation,#order,#thanks').fadeOut('slow');
+        });
+    
+
+    }
+    modal($('[data-modal=consultation]'), $('.button_mini'), $('.modal__close'));
+
+
 });
   
 

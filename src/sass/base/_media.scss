@@ -234,4 +234,14 @@
             }
         }
     }  
+    .modal {
+        width: 310px;
+        padding: 25px 5px 0px 5px;
+        &__close {
+            position: absolute;
+            top: 1px;
+            left: 290px;
+            font-size: 25px;
+        }
+    }
 }
