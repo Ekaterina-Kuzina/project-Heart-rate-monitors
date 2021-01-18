@@ -14,4 +14,14 @@
         font-size: 20px;
         font-weight: 300;
     }
+    .error {
+        border: 2px solid $main-color;
+    }
+    label.error {
+        margin-bottom: 10px;
+        border: none;
+        color: #fff;
+        text-align: center;
+
+    }
 }

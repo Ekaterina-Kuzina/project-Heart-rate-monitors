@@ -36,41 +36,11 @@ $(document).ready(function(){
 
     //Modal
 
-    //First option
-
-    // $('[data-modal=consultation]').on('click', function(){
-    //     $('.overlay').css("display","block");
-    //     $('#consultation').css("display","block");
-    // });
-
-    // $('.modal__close').on('click', function(){
-    //     $('.overlay').css("display","none");
-    //     $('#consultation').css("display","none");
-    // });
-
-    //Second option
-    // $('[data-modal=consultation]').on('click', () => {
-    //     $('.overlay,#consultation').fadeIn('slow');
-    // });
-
-    // $('.modal__close').on('click', function(){
-    //     $('.overlay,#consultation,#order,#thanks').fadeOut('slow');
-    // });
-
-    // $('.button_mini').on('click', () => {
-    //     $('.overlay,#order').fadeIn('slow');
-    // });
-
-
-    //Optimized second option
-
     function modal(consultation,order, close) {
         consultation.on('click', () => {
             $('.overlay,#consultation').fadeIn('slow');
         });
-        // order.on('click', () => {
-        //     $('.overlay,#order').fadeIn('slow');
-        // });
+
         order.each(function(i){
             $(this).on('click',() => {
                 $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
@@ -86,6 +56,37 @@ $(document).ready(function(){
     modal($('[data-modal=consultation]'), $('.button_mini'), $('.modal__close'));
 
 
+    function validateForms (form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста,введите имя",
+                    minlength: jQuery.validator.format("Введите {0} символа!")
+                },
+                phone: "Пожалуйста,введите номер телефона",
+                email: {
+                  required: "Пожалйста,введите свою почту ",
+                  email: "Ваша почта должна быть в формате name@domain.com"
+                }
+            }
+        });
+    }
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
+
+    $('input[name=phone]').mask("+7 (999)-999-99-99");
 });
   
 
