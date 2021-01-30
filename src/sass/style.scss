@@ -1,4 +1,6 @@
 @import 'base/variables' ;
+@import 'base/media';
+@import 'base/animation';
 * {
     font-family: 'Museo Sans Cyrl', sans-serif;
 }
@@ -6,6 +8,7 @@
     max-width: 950px;
     margin: 0 auto;
 }
+
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/buttons';
@@ -18,4 +21,3 @@
 @import 'blocks/footer';
 @import 'blocks/modal';
 @import 'blocks/pageup';
-@import 'base/media';

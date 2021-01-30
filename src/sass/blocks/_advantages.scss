@@ -33,5 +33,13 @@
         text-align: center;
         margin: 38px 0 25px;
     }
+    &__img{
+        &_animated{
+            animation: heartbeat 1.5s ease infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+    }
 
 }
